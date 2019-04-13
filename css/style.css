@@ -122,10 +122,9 @@ h2 {
 }
 
 .sigma-content {
-	padding: 60px 40px;
+	padding: 8px 40px;
 	border-right: 1px solid #fff;
 	border-bottom: 1px solid #fff;
-	min-height: 280px;
 }
 
 .sigma-section-header {
@@ -233,7 +232,7 @@ h2 {
 		min-height: 200px;
 	}
 	.sigma-home h1 {
-		font-size: 40px;
+		font-size: 20px;
 	}
 	.sigma-home p {
 		font-size: 18px;
@@ -260,7 +259,7 @@ h2 {
 		line-height: 28px;
 	}
 	.sigma-content {
-		padding: 20px;
-		min-height: 100px;
+		padding: 50px;
+		min-height: 10px;
 	}
 }
