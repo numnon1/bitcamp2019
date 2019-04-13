@@ -10,6 +10,10 @@
     <link rel="stylesheet" type="text/css" href="css/ekko-lightbox.min.css">
     <link rel="stylesheet" type="text/css" href="font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script src=”https://www.gstatic.com/firebasejs/live/3.0/firebase-app.js"></script>
+     <script src=”https://www.gstatic.com/firebasejs/live/3.0/firebase-auth.js"></script>
+     <script src=”https://www.gstatic.com/firebasejs/ui/0.4.0/firebase-ui-auth.js"></script>
+     <link type=”text/css” rel=”stylesheet” href=”https://www.gstatic.com/firebasejs/ui/0.4.0/firebase-ui-auth.css" />
 
     <title>Zen Lodge</title>
 </head>
@@ -18,6 +22,7 @@
 
 <section id="home">
 
+  <div id=”firebaseui-auth-container”></div>
 	<div class="container-fluid">
 
     <div class = "row">
@@ -43,7 +48,23 @@
 
         	<div class="col-md-offset-2 col-lg-offset-3 col-lg-6 col-md-8 col-sm-12 text-center">
             	<h1>The Zen Lodge</h1>
-                <a href="#gallery" class="btn btn-danger sigma-start">Our Gallery</a>
+                <a class="btn btn-danger sigma-start">Our Gallery
+                  <script>
+                    var uiConfig = {
+                     ‘signInSuccessUrl’: ‘<url-to-redirect-to-on-success>’,
+                     ‘signInOptions’: [
+                     firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+                     firebase.auth.EmailAuthProvider.PROVIDER_ID
+                     ],
+                     ‘tosUrl’: ‘< Terms of service url>’,
+                     };
+                    var app = firebase.initializeApp(config);
+                     var auth = app.auth();
+                     var ui = new firebaseui.auth.AuthUI(auth);
+
+                     ui.start(‘#firebaseui-auth-container’, uiConfig);
+                   </script>
+                </a>
                 <a href="#about" class="btn btn-success sigma-start">Learn More</a>
             </div>
 
@@ -55,4 +76,17 @@
 
 
 </body>
+<script src="https://www.gstatic.com/firebasejs/5.9.4/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyDKeqAi9Vmmds1vdZOf6U2IMnJ-ODHrCeg",
+    authDomain: "zenlodge-bitcamp.firebaseapp.com",
+    databaseURL: "https://zenlodge-bitcamp.firebaseio.com",
+    projectId: "zenlodge-bitcamp",
+    storageBucket: "zenlodge-bitcamp.appspot.com",
+    messagingSenderId: "669948295318"
+  };
+  firebase.initializeApp(config);
+</script>
 </html>
