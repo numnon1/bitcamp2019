@@ -10,8 +10,7 @@
     <link rel="stylesheet" type="text/css" href="css/ekko-lightbox.min.css">
     <link rel="stylesheet" type="text/css" href="font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
-    <link rel="stylesheet" type="text/css" href="css/calendar.css">
-    <script type="text/javascript" src="js/calendar.js"></script>
+
     <title>Zen Lodge</title>
 </head>
 
@@ -21,64 +20,39 @@
 
 	<div class="container-fluid">
 
-    <div class="row">
+    <div class = "row">
       <div class="sigma-content col-md-3 col-sm-1 sigma-bg-lightgray text-center">
           <span class="sigma-icon fa fa-home"></span>
             <h2>Home</h2>
       </div>
-        <div class="sigma-content col-lg-3 col-md-6 sigma-bg-gray text-center">
-          <span class="sigma-icon fa fa-bolt"></span>
+        <div class="sigma-content col-md-3 col-sm-2 sigma-bg-lightgray text-center">
+          <span class="sigma-icon fa fa-heart"></span>
           <h2>Zen Zone</h2>
         </div>
-        <div class="sigma-content col-lg-3 col-md-6 sigma-bg-darkgray text-center">
+        <div class="sigma-content col-md-3 col-sm-2 sigma-bg-lightgray text-center">
           <span class="sigma-icon fa fa-book"></span>
           <h2>Journal</h2>
         </div>
-        <div class="sigma-content col-lg-3 col-md-6 sigma-bg-black text-center">
+        <div class="sigma-content col-md-3 col-sm-2 sigma-bg-lightgray text-center">
           <span class="sigma-icon fa fa-calendar"></span>
           <h2>Calendar</h2>
         </div>
     </div>
 
         <div class="row sigma-home single-page-nav">
-          <script>  
-          var fetch = require("node-fetch"); // or fetch() is native in browsers
-            fetch("https://www.googleapis.com/calendar/v3/users/me/settings", {
-              method: "get",
-              headers: {
-                Authorization: "Bearer ACCESS_TOKEN"
-              }
-            })
-              .then(res => res.json())
-              .then(json => console.log(json));
-            
-          var fetch = require("node-fetch"); // or fetch() is native in browsers
 
-            var makeQuerystring = params =>
-              Object.keys(params)
-                .map(key => {
-                  return encodeURIComponent(key) + "=" + encodeURIComponent(params[key]);
-                })
-                .join("&");
-            
-            fetch(
-              "https://www.googleapis.com/calendar/v3/calendars/CALENDAR_ID/events/quickAdd",
-              {
-                method: "post",
-                body: makeQuerystring({
-                  text: "EVENT_TEXT"
-                }),
-                headers: {
-                  "Content-Type": "application/x-www-form-urlencoded",
-                  Authorization: "Bearer ACCESS_TOKEN"
-                }
-              }
-            )
-              .then(res => res.json())
-              .then(json => console.log(json));
-            </script>
+        	<div class="col-md-offset-2 col-lg-offset-3 col-lg-6 col-md-8 col-sm-12 text-center">
+            	<h1>The Zen Lodge</h1>
+                <a href="#gallery" class="btn btn-danger sigma-start">Our Gallery</a>
+                <a href="#about" class="btn btn-success sigma-start">Learn More</a>
+            </div>
+
         </div>
 
 	</div>
 
 </section>
+
+
+</body>
+</html>
