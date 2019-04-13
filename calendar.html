@@ -41,11 +41,17 @@
 
         <div class="row sigma-home single-page-nav">
 
-        	<div class="col-md-offset-2 col-lg-offset-3 col-lg-6 col-md-8 col-sm-12 text-center">
-            	<h1>The Zen Lodge</h1>
-                <a href="#gallery" class="btn btn-danger sigma-start">Our Gallery</a>
-                <a href="#about" class="btn btn-success sigma-start">Learn More</a>
-            </div>
+        	<script>
+          var fetch = require("node-fetch"); // or fetch() is native in browsers
+            fetch("https://www.googleapis.com/calendar/v3/users/me/settings", {
+              method: "get",
+              headers: {
+              Authorization: "Bearer ACCESS_TOKEN"
+              }
+          })
+          .then(res => res.json())
+          .then(json => console.log(json));
+          </script>
 
         </div>
 
